@@ -13,16 +13,6 @@ module.exports = function(grunt) {
     eslint: {
       scripts: ['src/**/*.js']
     },
-    copy: {
-      classes: {
-        files: [{
-          expand: true,
-          cwd: 'build/types',
-          src: '*',
-          dest: 'types'
-        }]
-      }
-    },
     watch: {
       scripts: {
         files: ['src/**/*.js'],
@@ -35,8 +25,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-babel');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-eslint');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-clean');
 
-  grunt.registerTask('default', ['clean', 'babel', 'copy', 'eslint']);
+  grunt.registerTask('default', ['clean', 'babel', 'eslint']);
 };
